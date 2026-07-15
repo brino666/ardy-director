@@ -1,0 +1,19 @@
+[Unit]
+Description=ARDY Director control service (motion generation API)
+After=network-online.target
+
+[Service]
+Type=simple
+User=sophiacore
+WorkingDirectory=/home/sophiacore/ardy
+Environment=CUDA_VISIBLE_DEVICES=0
+Environment=PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+Environment=DIRECTOR_PORT=9600
+ExecStart=/bin/bash -lc 'source /home/sophiacore/ardy/venv/bin/activate && export HF_TOKEN=$(cat /home/sophiacore/.cache/huggingface/token) && exec python /home/sophiacore/ardy-director/director_service/service.py'
+Restart=always
+RestartSec=8
+StandardOutput=append:/home/sophiacore/ardy_director.log
+StandardError=append:/home/sophiacore/ardy_director.log
+
+[Install]
+WantedBy=multi-user.target

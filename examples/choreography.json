@@ -1,0 +1,10 @@
+{
+  "model": "core",
+  "seed": 42,
+  "steps": [
+    {"prompt": "walk forward confidently", "duration": 3},
+    {"prompt": "stop and turn around", "duration": 2},
+    {"prompt": "wave hello", "duration": 2},
+    {"prompt": "sit down on the floor", "duration": 3}
+  ]
+}

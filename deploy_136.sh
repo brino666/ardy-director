@@ -2,9 +2,9 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # Deploy + (re)start the ARDY Director control service on the ARDY host.
 set -euo pipefail
-HOST="${ARDY_HOST:-192.168.0.136}"
-USER="${ARDY_USER:-sophiacore}"
-PASS="${ARDY_PASS:-Elyanlabs12@}"
+HOST="${ARDY_HOST:?set ARDY_HOST to the ARDY host}"
+USER="${ARDY_USER:?set ARDY_USER}"
+PASS="${ARDY_PASS:?set ARDY_PASS (do not hardcode credentials)}"
 PORT="${DIRECTOR_PORT:-9600}"
 SSH="sshpass -p $PASS ssh -o StrictHostKeyChecking=no -o PubkeyAuthentication=no $USER@$HOST"
 SCP="sshpass -p $PASS scp -o StrictHostKeyChecking=no -o PubkeyAuthentication=no"

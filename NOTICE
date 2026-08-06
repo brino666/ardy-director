@@ -1,0 +1,7 @@
+Copyright (C) 2026 Elyan Labs LLC
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+
+This software wraps NVIDIA ARDY (https://github.com/nv-tlabs/ardy), whose code
+is Apache-2.0 and whose model weights are under the NVIDIA Open Model License;
+those licenses govern ARDY itself.
